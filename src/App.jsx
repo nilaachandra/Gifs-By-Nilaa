@@ -1,16 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
+import Layout from './Layouts/Layout'
+import Homepage from './Pages/Homepage'
+import Categories from './Pages/Categories'
+import Search from './Pages/Search'
+import Gif from './Pages/Gif'
+import Favourites from './Pages/Favourites'
 
+
+
+const router = createBrowserRouter([
+  {
+    element: <Layout/>,
+    children:[
+      {
+        path: '/',
+        element: <Homepage/>
+      },
+      {
+        path: '/:categories',
+        element: <Categories/>
+      },
+      {
+        path: '/search/:query',
+        element: <Search/>
+      },
+      {
+        path: '/:type/:slug',
+        element: <Gif/>
+      },
+      {
+        path: '/favourites',
+        element: <Favourites/>
+      },
+
+    ]
+  }
+])
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <h1 className='text-red-800'>app working</h1>
-    </>
-  )
+  return <RouterProvider router={router}/>
 }
 
 export default App
