@@ -8,7 +8,7 @@ const Header = () => {
   const [showCategories, setShowCategories] = useState(false);
 
   //getting context
-  const { gf, filter, setFilter, fav, setFav } = GifState();
+  const { gf,gifs, setGifs, filter, setFilter, fav, setFav } = GifState();
 
   //fetch the data
   const fetchCategories = async () => {
