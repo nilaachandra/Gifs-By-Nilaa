@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { GifState } from '../Context/GifContext'
 import banner from '../assets/standard.gif'
 import Gif from '../Pages/Gif'
+import Filter from '../Components/Filter'
   const Homepage = () => {
     const { gf,gifs, setGifs, filter, setFilter, fav, setFav } = GifState();
 const fetchTrendingGifs = async () => {
@@ -18,6 +19,8 @@ const fetchTrendingGifs = async () => {
   return (
     <div>
       <img src={banner} alt="" className='w-full lg:h-[16vh] h-[6vh] rounded-md my-3'/>
+
+      <Filter showTrending={true}/>
 
       <div className='columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-3'>
         {gifs.map((gif) => {
