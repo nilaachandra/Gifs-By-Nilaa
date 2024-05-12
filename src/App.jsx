@@ -5,7 +5,7 @@ import Layout from './Layouts/Layout'
 import Homepage from './Pages/Homepage'
 import Categories from './Pages/Categories'
 import Search from './Pages/Search'
-import Gif from './Pages/Gif'
+import Gifpage from './Pages/Gifpage'
 import Favourites from './Pages/Favourites'
 import GifProvider from './Context/GifContext'
 
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/:type/:slug',
-        element: <Gif/>
+        element: <Gifpage/>
       },
       {
         path: '/favourites',

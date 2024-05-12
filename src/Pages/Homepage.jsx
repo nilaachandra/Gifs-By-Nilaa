@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { GifState } from '../Context/GifContext'
 import banner from '../assets/standard.gif'
-import Gif from '../Pages/Gif'
+import Gif from '../Components/Gif'
 import Filter from '../Components/Filter'
   const Homepage = () => {
     const { gf,gifs, setGifs, filter, setFilter, fav, setFav } = GifState();

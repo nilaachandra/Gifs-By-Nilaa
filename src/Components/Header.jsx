@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import svglogo from "../assets/svglogo.svg";
 import { MdDashboard } from "react-icons/md";
 import { GifState } from "../Context/GifContext";
+import SearchBar from "./SearchBar";
 const Header = () => {
   const [categories, setCategories] = useState([]);
   const [showCategories, setShowCategories] = useState(false);
@@ -81,6 +82,7 @@ const Header = () => {
           </div>
         )}
       </div>
+      <SearchBar/>
     </nav>
   );
 };
