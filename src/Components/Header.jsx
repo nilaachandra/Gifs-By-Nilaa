@@ -44,35 +44,32 @@ const Header = () => {
             );
           })}
 
-          <button onClick={() => setShowCategories(!showCategories)}>
-            <MdDashboard
-              size={36}
-              className="yellowtext hidden lg:block md:block"
-            />
-          </button>
-
+         
           {/* render favourites only if the the length is more than 0 */}
           {fav.length > 0 && (
             <div className="h-9 pt-2 px-6 cursor-pointer rounded-md font-bold bg-slate-500">
-              <Link to="/favourites">Favorite GIFs</Link>
+              <Link to="/favourites">Favorites</Link>
             </div>
           )}
-
-          <button className="yellowtext block lg:hidden md:hidden">
-            <MdDashboard size={36} />
+           <button onClick={() => setShowCategories(!showCategories)}>
+            <MdDashboard
+              size={36}
+              className="yellowtext lg:block md:block"
+            />
           </button>
+
         </div>
         {showCategories && (
           <div className="absolute w-full right-0 top-16 px-10 pt-6 pb-9 nav-gradient text-black font-bold z-20">
             <span className="font-semibold">Categories</span>
             <hr className="border border-black" />
-            <div className="categories flex justify-between gap-3 flex-wrap mt-3">
+            <div className="categories flex gap-3 flex-wrap mt-3">
               {categories?.map((category, i) => {
                 return (
                   <Link
                     key={i}
                     to={`/${category.name_encoded}`}
-                    className="h-9 pt-2 px-6 cursor-pointer rounded-md font-bold bg-slate-400 hover:yellowtext hover-trans hidden lg:block md:block"
+                    className="h-9 pt-2 px-6 cursor-pointer rounded-md font-bold bg-slate-400 hover:yellowtext hover-trans lg:block md:block"
                   >
                     {category.name}
                   </Link>
