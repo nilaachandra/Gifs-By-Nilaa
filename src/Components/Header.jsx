@@ -4,10 +4,11 @@ import svglogo from "../assets/svglogo.svg";
 import { MdDashboard } from "react-icons/md";
 import { GifState } from "../Context/GifContext";
 import SearchBar from "./SearchBar";
+import giphy from '../assets/iphy.png'
 const Header = () => {
   const [categories, setCategories] = useState([]);
   const [showCategories, setShowCategories] = useState(false);
-
+  
   //getting context
   const { gf,gifs, setGifs, filter, setFilter, fav, setFav } = GifState();
 
@@ -26,9 +27,11 @@ const Header = () => {
       <div className="relative flex gap-4 justify-between items-center mb-2">
         <Link to="/" className="flex items-center gap-1 ">
           <img src={svglogo} alt="GifsByNilaa" className="lg:w-16 w-12" />
-          <h1 className="text-white lg:text-3xl text-xl hover:yellowtext hover-trans tracking-tight cursor-pointer font-bold poppins-bold">
+          <div><h1 className="text-white leading-none lg:text-3xl text-xl hover:yellowtext hover-trans tracking-tight cursor-pointer font-bold poppins-bold">
             GifsByNilaa
           </h1>
+        <img src={giphy} width={125}></img>
+          </div>
         </Link>
         <div className="font-bold text-md flex gap-2 items-center">
           {/* render categories */}
